@@ -1,10 +1,20 @@
-// BIG O = O(1)
+// BIG O = O(n^2)
 
-const products = ['tuxum','non','qulupnay','sut','banan']
+const findDuplicates = (arr) => {
+    let duplicates = [];
 
-const aynanBittaMaxsulotIzlash = (maxsulotlar,index) =>{
-    return maxsulotlar[index]
-}
+    for (let i = 0; i < arr.length; i++) {
+        for (let j = i + 1; j < arr.length; j++) {
+            if (arr[i] === arr[j] && !duplicates.includes(arr[i])) {
+                duplicates.push(arr[i]);
+            }
+        }
+    }
 
-console.log(aynanBittaMaxsulotIzlash(products,2))
+    return duplicates;
+};
+
+const numbers = [1, 2, 3, 4, 2, 5, 1];
+console.log(findDuplicates(numbers)); // Output: [1, 2]
+
 
