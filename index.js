@@ -1,20 +1,25 @@
-// BIG O = O(n^2)
+// 1. Raqamni stringgaylantirish
+//
+// 2. Stringni massivga aylantirish
+//
+// 3. massiveni teskari aylantirish
+//
+// 4. Massivni stringg qaytarish
+//
+// 5. Stringni raqamga aylantirish.
+//
+// 6. Raqamni  return qilish
 
-const findDuplicates = (arr) => {
-    let duplicates = [];
+const reverseInt = (n) => {
+    const reversed = n.toString().split("").reverse().join("");
+    const reversedNumber = parseInt(reversed);
 
-    for (let i = 0; i < arr.length; i++) {
-        for (let j = i + 1; j < arr.length; j++) {
-            if (arr[i] === arr[j] && !duplicates.includes(arr[i])) {
-                duplicates.push(arr[i]);
-            }
-        }
+    // raqamning ishorasini aniqlash
+    if (n < 0) {
+        return -reversedNumber;
+    } else {
+        return reversedNumber;
     }
-
-    return duplicates;
 };
 
-const numbers = [1, 2, 3, 4, 2, 5, 1];
-console.log(findDuplicates(numbers)); // Output: [1, 2]
-
-
+console.log(reverseInt(-123)); // Natija: -321
