@@ -1,25 +1,15 @@
-// 1. Raqamni stringgaylantirish
-//
-// 2. Stringni massivga aylantirish
-//
-// 3. massiveni teskari aylantirish
-//
-// 4. Massivni stringg qaytarish
-//
-// 5. Stringni raqamga aylantirish.
-//
-// 6. Raqamni  return qilish
-
-const reverseInt = (n) => {
-    const reversed = n.toString().split("").reverse().join("");
-    const reversedNumber = parseInt(reversed);
-
-    // raqamning ishorasini aniqlash
-    if (n < 0) {
-        return -reversedNumber;
-    } else {
-        return reversedNumber;
+const fizzBuzz = (n) => {
+    for (let i = 1; i <= n; i++) {
+        if (i % 3 === 0 && i % 5 === 0) {
+            console.log("FizzBuzz");
+        } else if (i % 3 === 0) {
+            console.log("Fizz");
+        } else if (i % 5 === 0) {
+            console.log("Buzz");
+        } else {
+            console.log(i);
+        }
     }
 };
 
-console.log(reverseInt(-123)); // Natija: -321
+fizzBuzz(15);
